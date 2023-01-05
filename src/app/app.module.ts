@@ -1,3 +1,4 @@
+import { DropDown } from './shared/dropdown.directive';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     RecipeDetailsComponent,
     ShoppingEditComponent,
     ShoppingListComponent,
-    RecipeItemComponent
+    RecipeItemComponent,
+    DropDown
   ],
   imports: [
     BrowserModule,
