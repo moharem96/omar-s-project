@@ -18,12 +18,25 @@
         Manage Recipes <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a href="#">To shopping List</a></li>
+        <li>
+          <a (click)="toShoppingList()" style="cursor: pointer"
+            >To shopping List</a
+          >
+        </li>
         <li><a href="#">Edit Recipe</a></li>
         <li><a href="#">Delete Recipe</a></li>
       </ul>
     </div>
   </div>
-  <div class="col-xs-12">Description</div>
-  <div class="col-xs-12">Ingredients</div>
+  <div class="col-xs-12">{{ recipeDetails.description }}</div>
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let ingredient of recipeDetails.ingredients"
+      >
+        {{ ingredient.name }} - {{ ingredient.amount }}
+      </li>
+    </ul>
+  </div>
 </div>
