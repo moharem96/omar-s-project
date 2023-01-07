@@ -25,8 +25,8 @@ constructor(private shoopingList: ShoppingListService){}
   return this.recipes.slice()
  }
 
- addIngToShopping(ingredients: Ingredient[]){
-  this.shoopingList.addIngredients(ingredients)
- }
+//  addIngToShopping(ingredients: Ingredient[]){
+//   this.shoopingList.addIngredients(ingredients)
+//  }
 
 }
