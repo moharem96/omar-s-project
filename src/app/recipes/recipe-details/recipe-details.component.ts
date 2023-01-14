@@ -3,7 +3,7 @@ import { Ingredient } from './../../shared/ingredient.model';
 import { Recipe } from './../recipe.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-details',
@@ -14,7 +14,7 @@ export class RecipeDetailsComponent implements OnInit {
 recipeDetails: Recipe
 id: number
 
-  constructor(private recipeService: RecipeService, private shoppingList: ShoppingListService, private route: ActivatedRoute){}
+  constructor(private recipeService: RecipeService, private shoppingList: ShoppingListService, private route: ActivatedRoute, private router: Router){}
 
 ngOnInit(): void {
   this.route.params.subscribe(
@@ -30,5 +30,10 @@ ngOnInit(): void {
   // }
   toShoppingList() {
     this.shoppingList.addIngToShopping(this.recipeDetails.ingredients)
+  }
+
+  onDelete(){
+    this.recipeService.deleteRecipe(this.id)
+    this.router.navigate(['../'], {relativeTo: this.route})
   }
 }
