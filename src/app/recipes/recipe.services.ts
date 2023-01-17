@@ -10,19 +10,26 @@ export class RecipeService {
   recipeChanged = new Subject<Recipe[]>()
 
 
-  private recipes: Recipe[]= [
-  new Recipe('first item',
-   'this is description',
-    'https://images.immediate.co.uk/production/volatile/sites/30/2013/05/200323BBCGOODFOODAUGUSTCOVERANDSTORY007616-e588480.jpg?quality=90&webp=true&resize=600,545',
-  [new Ingredient('Meat', 1), new Ingredient('French Fries', 20)]),
+//   private recipes: Recipe[]= [
+//   new Recipe('first item',
+//    'this is description',
+//     'https://images.immediate.co.uk/production/volatile/sites/30/2013/05/200323BBCGOODFOODAUGUSTCOVERANDSTORY007616-e588480.jpg?quality=90&webp=true&resize=600,545',
+//   [new Ingredient('Meat', 1), new Ingredient('French Fries', 20)]),
 
-  new Recipe('second item', 'this is second description',
-   'https://images.immediate.co.uk/production/volatile/sites/30/2013/05/200323BBCGOODFOODAUGUSTCOVERANDSTORY007616-e588480.jpg?quality=90&webp=true&resize=600,545',
-   [new Ingredient('Buns', 2), new Ingredient('Meat', 2)]),
- ]
+//   new Recipe('second item', 'this is second description',
+//    'https://images.immediate.co.uk/production/volatile/sites/30/2013/05/200323BBCGOODFOODAUGUSTCOVERANDSTORY007616-e588480.jpg?quality=90&webp=true&resize=600,545',
+//    [new Ingredient('Buns', 2), new Ingredient('Meat', 2)]),
+//  ]
+
+private recipes: Recipe[] = [];
 
 constructor(private shoopingList: ShoppingListService){}
 
+
+setRecipe(recipes: Recipe[]) {
+  this.recipes = recipes
+  this.recipeChanged.next(this.recipes.slice())
+}
 
 getRecipe() {
   return this.recipes.slice()
