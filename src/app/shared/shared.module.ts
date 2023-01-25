@@ -6,25 +6,17 @@ import { AlertComponeent } from './alert/alert.component';
 import { NgModule } from '@angular/core';
 
 @NgModule({
-  declarations: [
-    AlertComponeent,
-    LoadingSpinnerComponent,
-    DropDown
-  ],
+  declarations: [AlertComponeent, LoadingSpinnerComponent, DropDown],
 
-  imports: [
-    CommonModule,
-    FormsModule
-  ],
+  imports: [CommonModule, FormsModule],
 
   exports: [
     AlertComponeent,
     LoadingSpinnerComponent,
     DropDown,
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
-  entryComponents: [AlertComponeent]
-
+  entryComponents: [AlertComponeent],
 })
 export class SharedModule {}
