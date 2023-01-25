@@ -1,3 +1,4 @@
+import { AuthGuard } from './../auth/auth.guard';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ShoppingListComponent } from './shopping-list.component';
