@@ -10,7 +10,9 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [ShoppingEditComponent, ShoppingListComponent],
   imports: [
     FormsModule,
-    RouterModule.forChild([{ path: '', component: ShoppingListComponent }]),
+    RouterModule.forChild([
+      { path: '', component: ShoppingListComponent, canActivate: [AuthGuard] },
+    ]),
     SharedModule,
   ],
 })
